@@ -1,0 +1,38 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculatorContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 600px;
+  width:  450px;
+  background-color: silver;
+  border: 5px;
+  border-radius: 10px;
+  border-style: ridge;
+  border-color: black;
+}
+
+.displayContainer {
+  background-color: rgb(95, 95, 95);
+}
+
+.buttonsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 400px;
+  width: 350px;
+  background-color: rgb(219, 11, 11);
+}
+
+button {
+  height: 50px;
+  width: 75px;
+}
