@@ -4,6 +4,9 @@ const numberInput = document.querySelectorAll('.number');
 const operatorInput = document.querySelectorAll('.operator');
 const equalsInput = document.querySelector('.equals');
 const clearInput = document.querySelector('.clear');
+const plusMinusInput = document.querySelector('.plusMinus');
+const percentageInput = document.querySelector('.percentage');
+const decimalInput = document.querySelector('.decimal');
 
 const divideInput = document.getElementById('divide');
 const multiplyInput = document.getElementById('multiply');
@@ -20,7 +23,7 @@ let operatorSelect = '';
 const divideFunction = (sum1, sum2) => sum1 / sum2;
 const multiplyFunction = (sum1, sum2) => sum1 * sum2;
 const subtractFunction = (sum1, sum2) => sum1 - sum2;
-const addFunction = (sum1, sum2) => sum1 + sum2;
+const addFunction = (sum1, sum2) => Number(sum1) + Number(sum2);
 
 //saves number input to variables depending on operatorSelect variable value
 numberInput.forEach(num => {
@@ -100,6 +103,10 @@ equalsInput.addEventListener('click', () => {
       finalSum = addFunction(finalSum, secondSum);
   }
 });
+
+// plusMinusInput.addEventListener('click', () => {
+//   if (firstSum !== '' || )
+// });
 
 //clears the calculator display on click of C button
 clearInput.addEventListener('click', () => {
