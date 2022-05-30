@@ -1,4 +1,3 @@
-const operatorDisplay = document.querySelector('.operatorDisplay');
 const numberDisplay = document.querySelector('.numberDisplay');
 const numberInput = document.querySelectorAll('.number');
 const operatorInput = document.querySelectorAll('.operator');
@@ -30,10 +29,11 @@ numberInput.forEach(num => {
   num.addEventListener('click', () => {
     if (operatorSelect == '') {
       firstSum += num.textContent;
+      numberDisplay.textContent = firstSum;
     } else {
       secondSum += num.textContent;
+      numberDisplay.textContent = secondSum;
     }
-    numberDisplay.textContent += num.textContent;
   });
 });
 
@@ -57,6 +57,11 @@ operatorInput.forEach(operator => {
       finalSum = subtractFunction(finalSum, secondSum);
   } else if (operatorSelect == '+') {
       finalSum = addFunction(finalSum, secondSum);
+  }
+    if (firstSum !== '' && secondSum == '') {
+      numberDisplay.textContent = firstSum;
+  } else {
+      numberDisplay.textContent = finalSum;
   }
   });
 });
@@ -102,10 +107,11 @@ equalsInput.addEventListener('click', () => {
   } else if (operatorSelect == '+') {
       finalSum = addFunction(finalSum, secondSum);
   }
+  numberDisplay.textContent = finalSum;
 });
 
 // plusMinusInput.addEventListener('click', () => {
-//   if (firstSum !== '' || )
+//   if (firstSum !== '' 
 // });
 
 //clears the calculator display on click of C button
@@ -114,6 +120,7 @@ clearInput.addEventListener('click', () => {
   secondSum = '';
   finalSum = '';
   operatorSelect = '';
+  numberDisplay.textContent = '';
 });
 
 
