@@ -15,7 +15,6 @@ const addInput = document.getElementById('add');
 //user input variables
 let firstSum = '';
 let secondSum = '';
-let finalSum = '';
 let operatorSelect = '';
 
 //basic maths functions
@@ -40,29 +39,16 @@ numberInput.forEach(num => {
 //uses the operatorSelect variable and event bubbling to invoke the desired maths function
 operatorInput.forEach(operator => {
   operator.addEventListener('click', () => {
-    if (operatorSelect == '/' && finalSum == '') {
-      finalSum = divideFunction(firstSum, secondSum);
-  } else if (operatorSelect == '*' && finalSum == '') {
-      finalSum = multiplyFunction(firstSum, secondSum);
-  } else if (operatorSelect == '-' && finalSum == '') {
-      finalSum = subtractFunction(firstSum, secondSum);
-  } else if (operatorSelect == '+' && finalSum == '') {
-      finalSum = addFunction(firstSum, secondSum);
-  }
-    else if (operatorSelect == '/') {
-      finalSum = divideFunction(finalSum, secondSum);
+    if (operatorSelect == '/') {
+      firstSum = divideFunction(firstSum, secondSum);
   } else if (operatorSelect == '*') {
-      finalSum = multiplyFunction(finalSum, secondSum);
+      firstSum = multiplyFunction(firstSum, secondSum);
   } else if (operatorSelect == '-') {
-      finalSum = subtractFunction(finalSum, secondSum);
+      firstSum = subtractFunction(firstSum, secondSum);
   } else if (operatorSelect == '+') {
-      finalSum = addFunction(finalSum, secondSum);
+      firstSum = addFunction(firstSum, secondSum);
   }
-    if (firstSum !== '' && secondSum == '') {
-      numberDisplay.textContent = firstSum;
-  } else {
-      numberDisplay.textContent = finalSum;
-  }
+    numberDisplay.textContent = firstSum;
   });
 });
 
@@ -89,36 +75,29 @@ addInput.addEventListener('click', () => {
 
 //uses operator in operatorSelect variable and invokes maths function
 equalsInput.addEventListener('click', () => {
-  if (operatorSelect == '/' && finalSum == '') {
-      finalSum = divideFunction(firstSum, secondSum);
-  } else if (operatorSelect == '*' && finalSum == '') {
-      finalSum = multiplyFunction(firstSum, secondSum);
-  } else if (operatorSelect == '-' && finalSum == '') {
-      finalSum = subtractFunction(firstSum, secondSum);
-  } else if (operatorSelect == '+' && finalSum == '') {
-      finalSum = addFunction(firstSum, secondSum);
-  }
-    else if (operatorSelect == '/') {
-      finalSum = divideFunction(finalSum, secondSum);
+  if (operatorSelect == '/') {
+      firstSum = divideFunction(firstSum, secondSum);
   } else if (operatorSelect == '*') {
-      finalSum = multiplyFunction(finalSum, secondSum);
+      firstSum = multiplyFunction(firstSum, secondSum);
   } else if (operatorSelect == '-') {
-      finalSum = subtractFunction(finalSum, secondSum);
+      firstSum = subtractFunction(firstSum, secondSum);
   } else if (operatorSelect == '+') {
-      finalSum = addFunction(finalSum, secondSum);
+      firstSum = addFunction(firstSum, secondSum);
   }
-  numberDisplay.textContent = finalSum;
+    numberDisplay.textContent = firstSum;
+    secondSum = '';
+    operatorSelect = '';
 });
 
-// plusMinusInput.addEventListener('click', () => {
-//   if (firstSum !== '' 
-// });
+plusMinusInput.addEventListener('click', () => {
+  if (firstSum !== '' && secondSum == '')
+    firstSum += '-';
+});
 
 //clears the calculator display on click of C button
 clearInput.addEventListener('click', () => {
   firstSum = '';
   secondSum = '';
-  finalSum = '';
   operatorSelect = '';
   numberDisplay.textContent = '';
 });
@@ -184,3 +163,25 @@ clearInput.addEventListener('click', () => {
 //     secondSum = '';
 //   }
 // });
+
+//UNUSED CODE FROM EQUALS INPUT WHEN USING FINALRESULT
+ //   else if (operatorSelect == '/') {
+  //     firstSum = divideFunction(secondSum, firstSum);
+  // } else if (operatorSelect == '*') {
+  //     firstSum = multiplyFunction(secondSum, firstSum);
+  // } else if (operatorSelect == '-') {
+  //     firstSum = subtractFunction(secondSum, firstSum);
+  // } else if (operatorSelect == '+') {
+  //     firstSum = addFunction(secondSum, firstSum);
+  // }
+
+  //UNUSED CODE FROM OPERATORINPUT WHEN USING FINALRESULT
+  //   else if (operatorSelect == '/') {
+  //     firstSum = divideFunction(secondSum, firstSum);
+  // } else if (operatorSelect == '*') {
+  //     firstSum = multiplyFunction(secondSum, firstSum);
+  // } else if (operatorSelect == '-') {
+  //     firstSum = subtractFunction(secondSum, firstSum);
+  // } else if (operatorSelect == '+') {
+  //     firstSum = addFunction(secondSum, firstSum);
+  // }
