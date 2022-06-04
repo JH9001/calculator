@@ -9,9 +9,9 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 600px;
-  width:  450px;
-  background-color: silver;
+  height: 460px;
+  width:  300px;
+  background-color: rgb(241, 235, 223);
   border: 5px;
   border-radius: 10px;
   border-style: ridge;
@@ -19,9 +19,18 @@ body {
 }
 
 .displayContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   height: 75px;
-  width: 350px;
-  background-color: rgb(95, 95, 95);
+  width: 285px;
+  background-color: rgb(192, 192, 192);
+}
+
+.numberDisplay {
+  font-family: monospace;
+  font-size: 5em;
+  padding: 5px;
 }
 
 .buttonsContainer {
@@ -29,16 +38,57 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  height: 400px;
-  width: 350px;
-  background-color: rgb(219, 11, 11);
+  height: 345px;
+  width: 300px;
+  gap: 5px;
+  background-color:rgb(241, 235, 223);
 }
 
 button {
-  height: 50px;
-  width: 75px;
+  font-family: 'Kanit', sans-serif;
+  height: 65px;
+  width: 65px;
+  border: 3px;
+  border-style: inset;
+  border-color: black;
+  border-radius: 5px;
+  background-color: rgb(32, 31, 31);
+  color: white;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.operator {
+  background-color: whitesmoke;
+  color: black;
+  font-size: 30px;
+}
+
+.equals {
+  background-color: whitesmoke;
+  color: black;
+}
+
+.clear {
+  background-color: orange;
+  color: whitesmoke;
+}
+
+.plusMinus {
+  background-color: blue;
+  color: whitesmoke;
+}
+
+.percentage {
+  background-color: blue;
+  color: whitesmoke;
+  font-size: 28px;
 }
 
 #zero {
-  width: 150px;
+  width: 135px;
+}
+
+#decimal {
+  font-weight: bolder;
 }
