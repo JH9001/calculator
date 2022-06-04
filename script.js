@@ -106,17 +106,18 @@ equalsInput.addEventListener('click', () => {
     secondSum = '';
 });
 
-decimalInput.addEventListener('click', () => {
-  if (!firstSum.includes('.') && !secondSum.includes('.')) {
-    decimalInput.disabled = false;
-    firstSum += decimalInput.textContent;
-    numberDisplay.textContent = firstSum;
-  } else if (!secondSum.includes('.')) {
-    decimalInput.disabled = false;
-    secondSum += decimalInput.textContent;
-    numberDisplay.textContent = secondSum;
-  }
-});
+//input the decimal into the sum variables and disables the decimal button if it has already been used in each sum
+// decimalInput.addEventListener('click', () => {
+//   if (!firstSum.includes('.') && !secondSum.includes('.')) {
+//     decimalInput.disabled = false;
+//     firstSum += decimalInput.textContent;
+//     numberDisplay.textContent = firstSum;
+//   } else if (!secondSum.includes('.')) {
+//     decimalInput.disabled = false;
+//     secondSum += decimalInput.textContent;
+//     numberDisplay.textContent = secondSum;
+//   }
+// });
 
 //clears the calculator display on click of C button
 clearInput.addEventListener('click', () => {
