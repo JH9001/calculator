@@ -1,6 +1,6 @@
 h2 {
   color: whitesmoke;
-  font-family: 'Kanit', sans-serif;
+  font-family: "Kanit", sans-serif;
   padding-top: 0;
 }
 
@@ -18,7 +18,7 @@ footer {
 }
 
 .copyright {
-  font-family: 'Kanit', sans-serif;
+  font-family: "Kanit", sans-serif;
   padding-right: 15px;
 }
 
@@ -32,7 +32,7 @@ footer {
   justify-content: space-around;
   align-items: center;
   height: 460px;
-  width:  300px;
+  width: 300px;
   background-color: rgb(241, 235, 223);
   border: 5px;
   border-radius: 10px;
@@ -63,11 +63,11 @@ footer {
   height: 345px;
   width: 300px;
   gap: 5px;
-  background-color:rgb(241, 235, 223);
+  background-color: rgb(241, 235, 223);
 }
 
 button {
-  font-family: 'Kanit', sans-serif;
+  font-family: "Kanit", sans-serif;
   height: 65px;
   width: 65px;
   border: 3px;
